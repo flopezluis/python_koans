@@ -25,4 +25,6 @@ using_metacharacters_macthing_white_spaces:
 using_metacharacters_matching_digits:
     myArray\[\d\]
 using_metacharacters_matching_alphanumeric_characters:
-    \w\w\w-\w\w\w   
+    \w\w\w-\w\w\w  
+using_metacharacters_matching_whitespaces_and_nonwhitespace:    
+    [\s] 

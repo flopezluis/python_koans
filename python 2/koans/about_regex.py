@@ -6,7 +6,7 @@ import re
 class AboutRegex(Koan):
     """
         This koans are based on the Ben's book: Regular Expressions in 10 minutes.
-        I found this books very useful so I decided to write a koans in order to practice everything I had learned from it.
+        I found this book very useful so I decided to write a koans in order to practice everything I had learned from it.
         http://www.forta.com/books/0672325667/
     """
 
@@ -235,4 +235,20 @@ class AboutRegex(Koan):
                 +"1_2-34R\n" \
                 +"BA_-2e3"
 
-        self.assertEquals( len(re.findall(__, string)), 5, "I want to find the ids") 
+        self.assertEquals( len(re.findall(__, string)), 5, "I want to find the ids")
+
+    def using_metacharacters_matching_whitespaces_and_nonwhitespace(self):
+        """
+            Lesson 3 Using metacharacters
+
+            Like with the digits you have  metacharacters for specific whitespace character:
+                \s Any whitespace character(same as [\f\n\r\t\v])
+                \S Any nonwhitespace character(same as [\f\n\r\t\v])
+            Note [\b], the backspace metacharacter, is not included in \s or excluded by \S
+            
+        """
+        f = open('koans/regex_whitespaces', 'r')
+        string = f.read()
+        #TIP: This text contains a text. Yo have to find all whitespaces
+        self.assertEquals( len(re.findall(__, string)), 7, "I want to find all whitespaces")
+        

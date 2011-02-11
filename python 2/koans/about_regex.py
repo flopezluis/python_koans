@@ -252,3 +252,40 @@ class AboutRegex(Koan):
         #TIP: This text contains a text. Yo have to find all whitespaces
         self.assertEquals( len(re.findall(__, string)), 7, "I want to find all whitespaces")
         
+    def matching_one_or_more_characters(self):
+        """
+            Lesson 4
+
+            To match one or more instances of a character (or set), simply append a +.
+            + matches at least one.
+
+            When you use + with sets, the + should be placed outside the set. [0-9]+
+            
+        """
+        string = "For questions about the book use support@forta.com or" \
+                " hola@flopezluis.es for questions about this koans"
+        mails = re.findall(__, string)
+        self.assertEquals(mails[0],"support@forta.com", "I want to find the first email")
+        self.assertEquals(mails[1],"hola@flopezluis.es", "I want to find the second email")
+        
+    def matching_one_or_more_characters_second(self):
+        """
+            Lesson 4
+            
+            The last example match the two addresses but the last pattern wouldn't 
+            match correctly this address: ben.forta@forta.com
+            I'd match forta@forta.com
+
+            To match one or more instances of a character (or set), simply append a +.
+            + matches at least one.
+
+            When you use + with sets, the + should be placed outside the set. [0-9]+
+            
+        """
+        string = "For questions about the book use ben.support@forta.com or" \
+                " hola@flopez.luis.es for questions about this koans"
+        #TIP: you must use sets
+        mails = re.findall(__, string)
+        self.assertEquals(mails[0],"ben.support@forta.com", "I want to find the first email")
+        self.assertEquals(mails[1],"hola@flopez.luis.es", "I want to find the second email")
+        

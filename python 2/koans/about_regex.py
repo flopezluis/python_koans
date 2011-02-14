@@ -289,3 +289,30 @@ class AboutRegex(Koan):
         self.assertEquals(mails[0],"ben.support@forta.com", "I want to find the first email")
         self.assertEquals(mails[1],"hola@flopez.luis.es", "I want to find the second email")
         
+    def matching_zero_or_more_characters(self):
+        """
+            Lesson 4
+            
+            To match zero or more instances of a character (or set), simply append a *.
+
+            If in the last example We had had the next text:
+                hello .ben@forta.com is my email address.
+            The pattern [\w.]+@[\w.]+\.\w+ had match ".ben@forta.com", so you need to 
+            match an alphanumeric text with optional aditional characters.
+
+        """
+        string = "hello .ben@forta.com is my email address."
+
+        mails = re.findall(__, string)
+        self.assertEquals(mails[0],"ben@forta.com", "I want to find the email")
+        
+    def matching_zero_or_one_character(self):
+        """
+            Lesson 4
+            
+            To match zero or one instances of a character (or set), simply append a ?.
+
+        """
+        string = "The URL is http://www.forta.com/, to connect " \
+                + "securely use https://www.forta.com/ instead"
+        self.assertEquals(len(re.findall(__,string)), 2,  "I want to find the email")

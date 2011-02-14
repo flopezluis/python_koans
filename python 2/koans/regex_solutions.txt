@@ -31,4 +31,8 @@ using_metacharacters_matching_whitespaces_and_nonwhitespace:
 matching_one_or_more_characters:
     \w+@\w+\.\w+
 matching_one_or_more_characters_second:    
-    [\w.]+@[\w.]+\.\w+"     
+    [\w.]+@[\w.]+\.\w+    
+matching_zero_or_more_characters:
+    \w+[\w.]*@[\w.]+\.\w+
+matching_zero_or_one_character:
+    https?://[\w./]+

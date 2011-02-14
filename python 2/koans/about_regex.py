@@ -316,3 +316,33 @@ class AboutRegex(Koan):
         string = "The URL is http://www.forta.com/, to connect " \
                 + "securely use https://www.forta.com/ instead"
         self.assertEquals(len(re.findall(__,string)), 2,  "I want to find the email")
+
+    def using_intervals_exact_intervals(self):
+        """
+            Lesson 4
+            
+            To specify an exact number of matches, you place that number between {}. 
+            {3} means match three instances of the previous character or set.
+            
+            We're going to use the same text that in test_using_multiple_ranges
+            Remember that in that case the pattern was:
+                #[0-9A-Fa-f][0-9A-Fa-f][0-9A-Fa-f][0-9A-Fa-f][0-9A-Fa-f][0-9A-Fa-f] 
+        """
+        #TIP: now you only need to find one [0-9A-Fa-f] and the interval.
+        string = '<BODY BGCOLOR="#336633" TEXT="#FFFFFF" MARGINWIDTH="0" MARGINHEIGHT="0" TOPMARGIN="0" LEFTMARGIN="0">'
+        self.assertEquals(len(re.findall(__, string)),2, "I want to find all the colors in RGB")
+
+    def using_intervals_range_intervals(self):
+        """
+            Lesson 4
+            
+            Intervals may also be used to specify a range of values.
+            {2,4} means match a minimum of 2 and a maximum of 4 
+            
+        """
+        string = "4/8/03\n" \
+                +"10-6-2004\n" \
+                +"2/2/2\n" \
+                +"01-01-01"
+        
+        self.assertEquals(len(re.findall("__", string)),3, "I want the correct dates.")

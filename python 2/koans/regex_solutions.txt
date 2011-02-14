@@ -21,7 +21,8 @@ using_metacharacters_escaping:
     myArray\[0\]    
 using_metacharacters_macthing_white_spaces:
     \n\n
-    IMPORTANT: Windows uses a carriage return line fedd combination used as an end-of-line marker, so you need to use \r\n.
+    IMPORTANT: Windows uses a carriage return line fedd combination used as an end-of-line marker, so you need to use \r\n and the pattern for both systems is 
+    [\r]?\n[\r]?\n but ? will be covered later.
 using_metacharacters_matching_digits:
     myArray\[\d\]
 using_metacharacters_matching_alphanumeric_characters:
@@ -36,3 +37,5 @@ matching_zero_or_more_characters:
     \w+[\w.]*@[\w.]+\.\w+
 matching_zero_or_one_character:
     https?://[\w./]+
+using_intervals_range_intervals:
+    \d{1,2}[-\/]\d{1,2}[-\/]\d{2,4}

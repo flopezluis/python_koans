@@ -346,3 +346,22 @@ class AboutRegex(Koan):
                 +"01-01-01"
         
         self.assertEquals(len(re.findall("__", string)),3, "I want the correct dates.")
+
+    def using_intervals_at_least(self):
+        """
+            Lesson 4
+            
+            We can specify the minimum of instances to be matched (without any maximun).
+            {2,} means match at least 2 instances 
+            
+        """
+        string = "1001: $496.80\n" \
+                +"1002: $1290.69\n" \
+                +"1003: $26.43\n" \
+                +"1004: $613.42\n" \
+                +"1005: $7.61\n" \
+                +"1006: $414.90\n" \
+                +"1007: $25.00" 
+        #tip: Yo must match: several digits + colon + whitespace + $ + at least 3 digits + . + 2 digits (decimals) 
+        self.assertEquals(len(re.findall("__", string)),4, "Search all orders valued at 100$ or more.")
+

@@ -365,3 +365,28 @@ class AboutRegex(Koan):
         #tip: Yo must match: several digits + colon + whitespace + $ + at least 3 digits + . + 2 digits (decimals) 
         self.assertEquals(len(re.findall("__", string)),4, "Search all orders valued at 100$ or more.")
 
+    def using_intervals_preventing_over_mathing(self):
+        """
+            Lesson 4
+            
+            Consider this example. Text that follows is part of a Web Page. The regular expression needs to match
+            any text within <B> tags.
+                text: This offer is not available to customers living in <B>AK</B> and <B>HI</B>
+                regex: <[Bb]>.*</[Bb]>
+                Result: <B>AK</B> and <B>HI</B>
+            Instead of two matches, only one was found. the .* matched everything after the first <B> until the last
+            <B> so that the text AK</B> and <B>HI was matched. 
+            The reason for this is that metacharacters such as * and + are greedy. They look for the greatest 
+            possible match as opposed to the smallest.
+            The solution is to use lazy versions of these quantifiers(they are referred to as being lazy because 
+            they match the fewest characters instead oj the most).
+
+            Lazy quantifiers are defined by appending an ?:
+                *?
+                *?
+                {n,}?
+        """
+        string = "This offer is not available to customers living in <B>AK</B> and <B>HI</B>"
+
+        self.assertEquals(len(re.findall(__, string)),2, " The regular expression needs to match any text within <B> tags.")
+

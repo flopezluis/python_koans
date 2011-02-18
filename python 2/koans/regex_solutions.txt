@@ -41,3 +41,5 @@ using_intervals_range_intervals:
     \d{1,2}[-\/]\d{1,2}[-\/]\d{2,4}
 using_intervals_at_least:
     \d+: \$\d{3,}\.\d{2}
+using_intervals_preventing_over_mathing:
+    <[Bb]>.*?</[Bb]>

@@ -390,3 +390,13 @@ class AboutRegex(Koan):
 
         self.assertEquals(len(re.findall(__, string)),2, " The regular expression needs to match any text within <B> tags.")
 
+    def position_mathing_word_boundaries(self):
+        """
+            Lesson 5
+            
+            \b is used to match the start or end of a word
+            
+        """
+        string = "The cat scattered his food all over the room"
+        m = re.search(__, string)
+        self.assertTrue(m and m.group(0) and m.group(0)== 'cat', "You must match the cat")

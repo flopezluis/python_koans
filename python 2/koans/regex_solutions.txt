@@ -43,3 +43,5 @@ using_intervals_at_least:
     \d+: \$\d{3,}\.\d{2}
 using_intervals_preventing_over_mathing:
     <[Bb]>.*?</[Bb]>
+position_mathing_word_boundaries:
+    \\bcat\\b"

@@ -45,3 +45,5 @@ using_intervals_preventing_over_mathing:
     <[Bb]>.*?</[Bb]>
 position_mathing_word_boundaries:
     \\bcat\\b"
+position_mathing_string_boundaries:
+    ^\s*<\?xml.*\?>

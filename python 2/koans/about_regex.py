@@ -400,3 +400,34 @@ class AboutRegex(Koan):
         string = "The cat scattered his food all over the room"
         m = re.search(__, string)
         self.assertTrue(m and m.group(0) and m.group(0)== 'cat', "You must match the cat")
+
+    def position_mathing_string_boundaries(self):
+        """
+            Lesson 5
+            
+            String boundaries are used to match patterns at the start or end of an entire string.
+            The string boundary metacharacters are ^ for start of string and $ for end of string.
+
+            ^ is one of several metacharacters thar has multiple uses. It negates a set only if
+            in a set (enclosed within [ and ]) is the first character after the opening ].
+            Outside of a set, and at the beginning of a pattern, ^ matches the start of string.
+
+            This is a more difficult :) you have to type a pattern which matches the 2 expressions
+        """
+        string = '<?xml version="1.0" encoding="UTF-8" ?>\n' \
+                + '<wsdl:definitions targetNamespace="http://tips.cf\n' \
+                + 'xmlns:impl="http://tips.cf" xmlns:intf="http://tips.cf" ' \
+                + 'xmlns:apachesoap="http://xml.apache.org/xml-soap"'
+
+        pattern = ""
+        m = re.search(pattern, string)
+        self.assertTrue(m and m.group() == '<?xml version="1.0" encoding="UTF-8" ?>', "You must match the cat")
+        
+        string = 'too bad too bad \n' \
+                + '<?xml version="1.0" encoding="UTF-8" ?>\n' \
+                + '<wsdl:definitions targetNamespace="http://tips.cf\n' \
+                + 'xmlns:impl="http://tips.cf" xmlns:intf="http://tips.cf" ' \
+                + 'xmlns:apachesoap="http://xml.apache.org/xml-soap"'
+        self.assertEqual(re.search(pattern, string), None, "You must match the cat")
+        
+
